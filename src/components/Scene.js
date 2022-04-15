@@ -1,6 +1,4 @@
-import { render } from "@testing-library/react";
-import React from "react";
-import { useRef, useEffect } from "react";
+import React,{ useRef, useEffect } from "react";
 import * as THREE from "three";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 
@@ -52,12 +50,11 @@ const Scene = () => {
         torus.scale.set(0.5, 0.5, 0.5);
 
         //mesh
-        const geometry = new THREE.RingGeometry( 1, 5, 32 );
+        const geometry = new THREE.RingGeometry( 8, 8, 10);
         const material = new THREE.MeshBasicMaterial( { side: THREE.DoubleSide } );
         const mesh = new THREE.Mesh( geometry, material );
         scene.add( mesh );
         mesh.position.set(-5, 4, 2);
-        mesh.scale.set(0.5, 1, 3, 1, 0);
 
 
         //render the scene  and camera
